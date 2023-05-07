@@ -60,7 +60,7 @@ public class SimpleServer extends AbstractServer {
 			} else if (request.equals("what’s the time?")) {
 				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
 
-					LocalTime currentTime = LocalTime.now();
+					LocalTime currentTime = LocalTime.now();//55
 				message.setMessage(currentTime.format(dtf));
 				client.sendToClient(message);
 			} else if (request.startsWith("multiply")){
