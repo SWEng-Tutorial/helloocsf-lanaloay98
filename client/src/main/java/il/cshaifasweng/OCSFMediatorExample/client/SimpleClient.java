@@ -20,9 +20,11 @@ public class SimpleClient extends AbstractClient {
 			EventBus.getDefault().post(new UpdateMessageEvent(message));
 		}else if(message.getMessage().equals("client added successfully")){
 			EventBus.getDefault().post(new NewSubscriberEvent(message));
-		}else if(message.getMessage().equals("Error! we got an empty message")){
+		}else if(message.getMessage().equals("Error! we got an empty message")) {
 			EventBus.getDefault().post(new ErrorEvent(message));
-		}else {
+		}//else if(message.getMessage().equals("send Submitters IDs")){
+				//EventBus.getDefault().post(new IDEvent(message));}
+		else {
 			EventBus.getDefault().post(new MessageEvent(message));
 		}
 	}
